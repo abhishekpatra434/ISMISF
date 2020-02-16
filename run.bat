@@ -1,1 +1,1 @@
-ng build --prod --base-href /ISMISF/
+npm install & ng build --prod --base-href /ISMISF/
