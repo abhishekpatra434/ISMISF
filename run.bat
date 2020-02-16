@@ -1,2 +1,2 @@
-date
-time
+npm install
+ng build --prod
