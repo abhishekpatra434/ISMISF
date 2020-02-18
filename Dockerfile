@@ -2,7 +2,7 @@
 FROM node:latest as node
 
 # set working directory
-WORKDIR /
+WORKDIR ISMISFE/
 
 # install and cache app dependencies
 COPY . .
