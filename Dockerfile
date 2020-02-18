@@ -1,5 +1,13 @@
-FROM java:8
+# base image
+FROM node:latest as node
+
+# set working directory
 WORKDIR /
-ADD ISMISB.war ISMISB.war
-EXPOSE 8080
-CMD ["java", "-jar", "ISMISB.war", "ISMISB.yml"]
+
+# install and cache app dependencies
+COPY . .
+RUN npm install
+RUN npm run build --prod
+
+FROM nginx:alpine
+COPY --from=node /app/dist/ng-docker-example /usr/share/ngnix/html
